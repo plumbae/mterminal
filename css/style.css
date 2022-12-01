@@ -1,0 +1,36 @@
+@import url('https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css');
+
+html {
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: white;
+  background-color: #222;
+}
+
+header {
+  display: block;
+}
+
+p {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+}
+
+.icon-holder {
+    font-size: 60px;
+    padding: 10px 30px 0px 30px;
+    color: white;
+}
+
+.top_text {
+    margin: 0 30px;
+    font-size: 40px;
+}
+
+.out {
+  width: 300px;
+}
