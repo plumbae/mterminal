@@ -2,33 +2,92 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Moggtrollen</title>
-  <link rel="icon" href="./images/home-location.png" type="image/x-icon">
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="icon" href="./resources/images/home-location.png" type="image/x-icon">
+  <link rel="stylesheet" href="./resources/css/style.css">
+  <link rel="stylesheet" href="./resources/css/popoutmenuround.css">
   <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=DM+Sans&family=Inter:wght@100;200;300;400;500;700&family=Merriweather:ital@0;1&family=Source+Sans+Pro:wght@300;400;600&family=Work+Sans:wght@400;500;800&display=swap" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=DM+Sans&family=Inter:wght@100;200;300;400;500;700&family=Merriweather:ital@0;1&family=Source+Sans+Pro:wght@300;400;600&family=Work+Sans:wght@400;500;800&display=swap');
+  </style>
 </head>
-
-<!-- HEADER SECTION -->
-<header>
-  <div class="top">
-    <div class="icon-holder">
-      <i class="fi fi-rr-home"></i>
-    </div>
-    <div class="top_text">
-      <p class="out">TEMP UTE:</p>
-    </div>
-  </div>
-</header>
 
 <!-- BODY SECTION -->
 <body>
+  <div class="wrapper">
+    
+    <!-- HEADER SECTION -->
+    <div class="header">
+      <div class="statusbar">
+        <div class="icon">
+          <img class="wifi" src="./resources/icons/icons8-wifi-48.png" alt="-">
+        </div>
+        <div>
+          <div class="myDate" id="myDateDisplay" onload="showDate()"></div>
+          <script src="./Resources/functions/date.js"></script>
+        </div>
+        <div>
+          <div class="myClock" id="myClockDisplay" onload="showTime()"></div>
+          <script src="./resources/functions/clock.js"></script>
+        </div>
+      </div>
+    </div>
+
+    <!-- left section -->
+    <div class="leftsection">
+      <div id="container" onload="today()"></div>
+    </div>
+
+    <!-- Right upper section -->
+    <div class="rightuppersection">
+      <h2>LUKAS</h2>
+    </div>
+
+    <!-- Right lower section -->
+    <div  class="rightlowersection">
+      <h2>VÄDER JUST NU</h2>
+    </div>
+    
+    <!-- FOOTER SECTION -->
+    <div class="footer">
+      <div class="statusbar">
+        <div class="pair">
+          <i class="fi fi-rr-temperature-low icon"></i>
+          <p class="out">UTE:</p>
+        </div>
+        <div class="pair">
+          <i class="fi fi-rr-temperature-low icon"></i>
+          <p class="in">INNE:</p>
+        </div>
+        <div class="version">
+          <p>V1.0</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Popoutmeny -->
+    <nav class="menu">
+      <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open"/>
+      <label class="menu-open-button" for="menu-open">
+        <span class="lines line-1"></span>
+        <span class="lines line-2"></span>
+        <span class="lines line-3"></span>
+      </label>
+      <button class="btns menu-item item-1" id="newbtn1" name="btn"><i class="fa fi-rr-home iconholder"></i></button>
+      <button class="btns menu-item item-2" id="newbtn2" name="btn"><i class="fa fi-rr-calendar iconholder"></i></button>
+      <button class="btns menu-item item-3" id="newbtn3" name="btn"><i class="fa fi-rr-ballot iconholder"></i></button>
+      <button class="btns menu-item item-4" id="newbtn4" name="btn"><i class="fa fi-rr-settings iconholder"></i></button>
+      <button class="btns menu-item item-5" id="newbtn5" name="btn"><i class="fa fi-rr-restaurant iconholder"></i></button>
+      <button class="btns menu-item item-6" id="newbtn6" name="btn"><i class="fa fi-rr-paw iconholder"></i></button>
+    </nav>
+  </div>
+  
+  <script src="./resources/functions/btnloadcontent.js"></script>
 
 </body>
-
-<!-- FOOTER SECTION -->
-<footer>
-
-</footer>
 </html>
