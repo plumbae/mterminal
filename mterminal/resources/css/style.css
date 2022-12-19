@@ -1,0 +1,137 @@
+@import url('https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css');
+
+html {
+  font-family: 'Inter', 'Work sans', 'Source sans pro', 'DM sans';
+  font-weight: 300;
+  color: white;
+  background-color: #222;
+}
+
+body {
+margin: 0;
+/*width: 800px;
+height: 480px;*/
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-block-start: 10px;
+  margin-block-end: 10px;
+  letter-spacing: 3px;
+  font-weight: 300;
+}
+
+p {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  font-size: 20px;
+}
+
+button {
+  font-size: 35px;
+}
+
+iframe {
+  border: none;
+  padding-top: 10px;
+}
+
+.wifi {
+  width: 26px;
+  height: 26px;
+  -webkit-filter: invert(1);
+  filter: invert(1);
+}
+
+.wrapper {
+  display: grid;
+  border-top: solid 1px white;
+  border-bottom: solid 1px white;
+  grid: 30px 210px 210px 30px / 480px 320px;
+  grid-template-areas:
+  "hd   hd"
+  "ls   rus"
+  "ls   rls"
+  "ft   ft";
+  grid-auto-flow: column;
+}
+
+.header {
+  grid-area: hd;
+  border-left: solid 10px #222;
+  border-right: solid 10px #222;
+  border-bottom: solid 1px red;
+}
+
+.leftsection {
+  border-top: solid 10px #222;
+  border-bottom: solid 10px #222;
+  border-right: solid 1px red;
+  grid-area: ls;
+  padding: 0px 20px 20px 20px;
+  font-size: 30px;
+  letter-spacing: 3px;
+}
+
+.rightuppersection {
+  border: solid 1px #222;
+  grid-area: rus;
+  padding: 10px 15px 20px 30px;
+}
+
+.rightlowersection {
+  border-right: solid 10px #222;
+  border-top: solid 1px red;
+  grid-area: rls;
+  padding: 10px 15px 20px 30px;
+}
+
+.footer {
+  border-left: solid 10px #222;
+  border-right: solid 10px #222;
+  border-top: solid 1px red;
+  grid-area: ft;
+  padding-top: 0px;
+}
+
+.statusbar {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 20px;
+  letter-spacing: 2px;
+  padding: 0px 5px;
+}
+
+.pair {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: top;
+  margin: 0px 0px;
+}
+
+.icon {
+    padding: 2px 2px 2px 2px;
+}
+
+.myDate, .myClock {
+  padding-left: 5px;
+}
+
+#container {
+  background-color: #222;
+  color: white;
+  font-size: 30px;
+  letter-spacing: 3px;
+}
+
+.today {
+  padding-right: 10px;
+  font-size: 28px;
+  letter-spacing: 3px;
+}
+
+.version {
+  padding: 0px 5px 5px 0px;;
+}
+
