@@ -15,6 +15,6 @@ function showDate(){
   document.getElementById("myDateDisplay").innerText = fulldate;
   document.getElementById("myDateDisplay").texContent = fulldate;
 
-  setTimeout(showTime, 10000);
+  setTimeout(showDate, 10000);
 }
 showDate();
