@@ -1,8 +1,8 @@
 function showDate(){
   var date = new Date();
   var y = date.getFullYear(); // e.g 2022
-  var m = date.getMonth(); //1-12
-  var d = date.getDay(); //1-31*/
+  var m = date.getMonth() + 1; //0-11 + 1
+  var d = date.getDate(); //1-31
 
   if(m < 10){
     m = '0' + m;
