@@ -1,4 +1,6 @@
 @import url('https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css');
+@import url('https://cdn-uicons.flaticon.com/uicons-thin-rounded/css/uicons-thin-rounded.css');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=DM+Sans&family=Inter:wght@100;200;300;400;500;700&family=Merriweather:ital@0;1&family=Source+Sans+Pro:wght@300;400;600&family=Work+Sans:wght@400;500;800&display=swap');
 
 html {
   font-family: 'Inter', 'Work sans', 'Source sans pro', 'DM sans';
@@ -23,11 +25,21 @@ h1, h2, h3, h4, h5, h6 {
 p {
   margin-block-start: 0px;
   margin-block-end: 0px;
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 button {
-  font-size: 35px;
+  font-size: 2rem;
+}
+
+.fullScreenButton {
+  font-size: 1.75rem;
+  padding: 0;
+  margin: 0;
+  background-color: #222;
+  color: white;
+  border: none;
+  line-height: 0;
 }
 
 iframe {
@@ -35,18 +47,10 @@ iframe {
   padding-top: 10px;
 }
 
-.wifi {
-  width: 26px;
-  height: 26px;
-  -webkit-filter: invert(1);
-  filter: invert(1);
-}
-
 .wrapper {
   display: grid;
-  border-top: solid 1px white;
-  border-bottom: solid 1px white;
-  grid: 30px 210px 210px 30px / 480px 320px;
+  height: 100vh;
+  grid: 1fr 11fr 11fr 1fr / 6fr 4fr;
   grid-template-areas:
   "hd   hd"
   "ls   rus"
@@ -57,37 +61,43 @@ iframe {
 
 .header {
   grid-area: hd;
-  border-left: solid 10px #222;
-  border-right: solid 10px #222;
+  border-left: solid 1px #222;
+  border-right: solid 1px #222;
   border-bottom: solid 1px red;
 }
 
 .leftsection {
-  border-top: solid 10px #222;
-  border-bottom: solid 10px #222;
+  border-top: solid 1px #222;
+  border-bottom: solid 1px #222;
   border-right: solid 1px red;
   grid-area: ls;
-  padding: 0px 20px 20px 20px;
+  padding: 15px 20px 20px 20px;
   font-size: 30px;
   letter-spacing: 3px;
 }
 
 .rightuppersection {
+  text-align: center;  
   border: solid 1px #222;
   grid-area: rus;
   padding: 10px 15px 20px 30px;
 }
 
 .rightlowersection {
-  border-right: solid 10px #222;
+  text-align: center;
+  border-right: solid 1px #222;
   border-top: solid 1px red;
   grid-area: rls;
   padding: 10px 15px 20px 30px;
 }
 
+.rightlowersection h2 {
+  padding-left: 20px;
+}
+
 .footer {
-  border-left: solid 10px #222;
-  border-right: solid 10px #222;
+  border-left: solid 1px #222;
+  border-right: solid 1px #222;
   border-top: solid 1px red;
   grid-area: ft;
   padding-top: 0px;
@@ -100,7 +110,7 @@ iframe {
   justify-content: space-between;
   font-size: 20px;
   letter-spacing: 2px;
-  padding: 0px 5px;
+  padding: 5px 5px;
 }
 
 .pair {
@@ -111,7 +121,12 @@ iframe {
 }
 
 .icon {
-    padding: 2px 2px 2px 2px;
+    padding: 3px 5px 2px 2px;
+}
+
+.myClock {
+  font-weight: 500;
+  font-size: 1.5rem;
 }
 
 .myDate, .myClock {
@@ -121,7 +136,7 @@ iframe {
 #container {
   background-color: #222;
   color: white;
-  font-size: 30px;
+  font-size: 2rem;
   letter-spacing: 3px;
 }
 
@@ -133,5 +148,86 @@ iframe {
 
 .version {
   padding: 0px 5px 5px 0px;;
+}
+
+.pair p {
+  padding-right: 0.3rem;
+}
+
+.weather {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+#weatherAndTemp {
+  font-size: 4.5rem;
+  font-weight: 300;
+  padding: 0rem 0.2rem 0rem 0.2rem;
+}
+#temperature {
+  font-size: 4.0rem;
+  font-weight: 200;
+  padding: 0rem 0.2rem 0rem 0.5rem;
+}
+
+#celsius {
+  font-size: 1.6rem;
+  font-weight: 300;
+  padding: 0.5rem 0rem 0rem 0.2rem;
+}
+
+#windAndPrecipitation {
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: end;
+}
+
+.dogWalkTimer {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: top;
+}
+
+.resetbutton {
+  font-size: 4rem;
+  padding: 1rem 1rem 0rem 1rem;
+  border-radius: 50%;
+  background-color: #669AE1;
+  box-shadow: 0 0 1px 1px #669AE1;
+  text-shadow: none;
+  border: none;
+}
+
+.resetbutton:active {
+  box-shadow: none;
+}
+
+.lukasTimer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 9rem;
+  height: 5.8rem;
+  border-radius: 1rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  /* Adjusted in script.js, timer()
+  background-color: #70CC72;
+  box-shadow: 0 0 1px 1px #70CC72;
+  */
+  text-shadow: none;
+  border: none;
+  color: black;
+}
+
+.lukasTimer h6 {
+  margin-top:  0.2rem;
+  margin-bottom: 0rem;
+  font-weight: 500;
 }
 

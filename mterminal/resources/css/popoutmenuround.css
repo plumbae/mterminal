@@ -6,7 +6,7 @@
   .iconholder {
     box-sizing: border-box;
     position: relative;
-    bottom: -2px; /* The position of the icons inside the buttons */
+    bottom: -3px; /* The position of the icons inside the buttons */
   }
 
   .menu-item, .menu-open-button {
@@ -78,9 +78,9 @@
   .menu {
     margin: 0;
     position: absolute;
-    top: 210px; /* position of the menubutton */
+    top: 46%; /* position of the menubutton */
     bottom: 0;
-    left: 448px; /* position of the menubutton */
+    left: 52%; /* position of the menubutton */
     right: 0;
     width: 60px;
     height: 60px;
@@ -138,7 +138,7 @@
     -webkit-transform: scale(1.0, 1.0) translate3d(0, 0, 0);
     transform: scale(1.0, 1.0) translate3d(0, 0, 0);
     cursor: pointer;
-    box-shadow: 0 0 8px 5px red;
+    box-shadow: 0 0 8px 5px #FF0000;
   }
 
   .menu-open-button:hover {

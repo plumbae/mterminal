@@ -10,36 +10,36 @@ var h = 350; // height of iframe
 
 function home() {
   console.log('Home');
-  container.innerHTML = '<iframe src="./pages/home.html" title="First page" width='+w+' height='+h+'>';
+  container.innerHTML = '<object data="./pages/home.html" width='+w+' height='+h+'><p>Your browser does not support embedded web pages. You can visit the page here: <a href="./pages/home.html">Visit page</a></p></object>';
 }
 home();
 
 btnLoad1.addEventListener('click', function( btnFunc ) {
   console.log('Home');
-  container.innerHTML = '<iframe src="./pages/home.html" title="First page" width='+w+' height='+h+'>';
+  container.innerHTML = '<object data="./pages/home.html" width='+w+' height='+h+'><p>Your browser does not support embedded web pages. You can visit the page here: <a href="./pages/home.html">Visit page</a></p></object>';
 })
 
 btnLoad2.addEventListener('click', function( altBtnFunc ) {
   console.log('Calendar');
-  container.innerHTML = '<iframe src="./pages/calendar.html" title="Second page" width='+w+' height='+h+'>';
+  container.innerHTML = '<object data="./pages/calendar.html" width='+w+' height='+h+'><p>Your browser does not support embedded web pages. You can visit the page here: <a href="./pages/calendar.html">Visit page</a></p></object>';
 })
 
 btnLoad3.addEventListener('click', function( altBtnFunc ) {
   console.log('Todo');
-  container.innerHTML = '<iframe src="./pages/todo.html" title="Second page" width='+w+' height='+h+'>';
+  container.innerHTML = '<object data="./pages/todo.html" width='+w+' height='+h+'><p>Your browser does not support embedded web pages. You can visit the page here: <a href="./pages/todo.html">Visit page</a></p></object>';
 })
 
 btnLoad4.addEventListener('click', function( altBtnFunc ) {
   console.log('Settings');
-  container.innerHTML = '<iframe src="./pages/settings.html" title="Second page" width='+w+' height='+h+'>';
+  container.innerHTML = '<object data="./pages/settings.html" width='+w+' height='+h+'><p>Your browser does not support embedded web pages. You can visit the page here: <a href="./pages/settings.html">Visit page</a></p></object>';
 })
 
 btnLoad5.addEventListener('click', function( altBtnFunc ) {
   console.log('Food');
-  container.innerHTML = '<iframe src="./pages/food.html" title="Second page" width='+w+' height='+h+'>';
+  container.innerHTML = '<object data="./pages/food.html" width='+w+' height='+h+'><p>Your browser does not support embedded web pages. You can visit the page here: <a href="./pages/food.html">Visit page</a></p></object>';
 })
 
 btnLoad6.addEventListener('click', function( altBtnFunc ) {
   console.log('Lukas');
-  container.innerHTML = '<iframe src="./pages/lukas.html" title="Second page" width='+w+' height='+h+'>';
+  container.innerHTML = '<object data="./pages/lukas.html" width='+w+' height='+h+'><p>Your browser does not support embedded web pages. You can visit the page here: <a href="./pages/lukas.html">Visit page</a></p></object>';
 })
