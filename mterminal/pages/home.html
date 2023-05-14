@@ -15,30 +15,36 @@
 </head>
 <body>
     <div class="ls-content">
-      <div class="today">IDAG</div>
+      
 
        <!-- Weekday, date, month -->
       <div class="pair">
+          <div class="today">IDAG</div>
           <div class="today" id="myTodayDisplay" onload="showToday()"></div>
           <script src="../resources/functions/today.js"></script>
       </div>
 
        <!-- Theme day -->
       <div>
-        <h2>Temadag</h2>
-        <div class="today" id="themeDay"></div>
-
+        <h3>Temadag:</h3>
+        <div class="today" id="themeDay" onload="themeDay()">
+          <!-- Theme days will pop in here as child div's -->
+        </div>
+        <script src="../resources/functions/themeDays.js"></script>
       </div>
+
       <div>
         <h2>Mat</h2>
         <div class="today" id="foodToday"></div>
 
       </div>
+
       <div>
         <h2>Att göra</h2>
         <div class="today" id="todoToday"></div>
 
       </div>
+
       <div>
         <h2>Kalender</h2>
         <div class="today" id="calenderToday"></div>

@@ -11,7 +11,6 @@ function goFullscreen() {
     }
 };
 
-//-----------------------------------------------------------------------------------------------------
 
 // Date function
 function showDate(){
@@ -36,7 +35,6 @@ function showDate(){
     return fulldate;
 };
 
-//--------------------------------------------------------------------------------------------------------
 
 // Time function
 function showTime(){
@@ -59,12 +57,17 @@ setTimeout(showTime, 10000);
 return time;
 };
 
-//-----------------------------------------------------------------------------------------------------------
+
+// Delay function
+function delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+};
+
 
 // Sunrise and sunset function
 function getSunlightData(param) { //Possible parameters: sunrise, sunset
 
-const updateInterval = 10 * 60 * 1000; // 10 minutes
+const updateInterval = 30 * 60 * 1000; // 30 minutes
 setTimeout(getSunlightData, updateInterval);
 
 // Get todays date
@@ -86,7 +89,7 @@ return new Promise((resolve, reject) => {
     
     // Assign the fetched data to the variable declared outside the fetch() callback
     outputData = data; 
-    //console.log(outputData);
+    console.log(outputData);
 
     // Get the sunrise data in UTC
     let sunriseTimeData = data.results.sunrise;
@@ -140,13 +143,6 @@ return new Promise((resolve, reject) => {
 });
 };
 
-//----------------------------------------------------------------------------------------------------
-
-// Import Eventemitter
-const EventEmitter = require('events');
-
-// Make new instance of the emitter
-const emitter = new EventEmitter();
 
 // Check if the sun is up or not
 async function daylight() {
@@ -169,30 +165,25 @@ async function daylight() {
         if (now > sunrise && now < sunset) {
             console.log("daylight")
             document.getElementById("sun").innerText = "Daylight!";
+            await delay(1000);
             return true;
         } else {
             console.log("sun is down")
-            document.getElementById("sun").innerText = "Sun is down!"
+            document.getElementById("sun").innerText = "Sun is down!";
+            await delay(1000);
             return false;
         }
 
     } catch (error) {
     console.error(error);
     }
-    
 };
+setTimeout(async () => {
+    const result = await daylight();
+    console.log(result);
+}, 2000);
 
-// Listen for daylightEvent trigger
-emitter.on('daylightEvent', async () => {
-    await daylight();
-});
 
-// Check if there is daylight by running daylightEvent and trigger daylight() every minute
-setInterval(() => {
-    emitter.emit('daylightEvent');
-  }, 10000); // 60000 milliseconds = 1 minute
-
-//----------------------------------------------------------------------------------------------------
 
 // Function to display week no.
 function showWeek() {
@@ -262,7 +253,6 @@ function showWeek() {
 };
 //console.log('week: ' + showWeek());
 
-//------------------------------------------------------------------------------------------------------
 
 // Function for getting weatherdata from SMHI api
 function  weatherData() {
@@ -468,12 +458,10 @@ function  weatherData() {
         }
     }).catch(error => console.log(error));
 
-    const updateInterval = 10 * 60 * 1000; //10 * 60 * 1000; // 10 minutes
+    const updateInterval = 30000; // 30 minutes
     setTimeout(weatherData, updateInterval);
 };
 
-
-//-------------------------------------------------------------------------------------------------
 
 // Timer function
 function timer() {
@@ -583,217 +571,5 @@ function timer() {
     setTimeout(timer, 1000);
 };
 
-//------------------------------------------------------------------------------------------------------
 
-/*
-// Function for getting news data from News api
-function  breakingNewsData() {
-
-    // Get weather data from the SMHI api
-    var xhr = fetch('https://newsapi.org/v2/top-headlines/sources?country=se&language=sv&category=general&apiKey=bc2535e2da8b4178b696ec8e8c2e0bc3/data');
-
-    // Make array of the data
-    xhr.then(response => response.json()).then(data => {
-        console.log(data);
-        
-        // Get weather symbol
-        for (let i=0; i<19; i++) {
-            
-            let parameterName = data.timeSeries[0].parameters[i].name;
-            
-            if (parameterName === 'Wsymb2') {
-                let weatherSymbol = data.timeSeries[0].parameters[i].values[0];
-                //console.log('parameter: ' + parameterName + ', ' + weatherSymbol);
-                
-                // Get the right weather symbol value 1-27
-                var wsymbol = () => {
-                    switch (weatherSymbol) {
-                        case 1:
-                            var iconHtml = '<i class="fi fi-tr-brightness"></i>';
-                            return iconHtml;
-                            break;
-                        case 2:
-                            var iconHtml = '<i class="fi fi-tr-cloud-sun"></i>';
-                            return iconHtml;
-                            break;
-                        case 3:
-                            var iconHtml = '<i class="fi fi-tr-clouds-sun"></i>';
-                            return iconHtml;
-                            break;
-                        case 4:
-                            var iconHtml = '<i class="fi fi-tr-clouds-sun"></i>';
-                            return iconHtml;
-                            break;
-                        case 5:
-                            var iconHtml = '<i class="fi fi-tr-clouds-sun"></i>';
-                            return iconHtml;
-                            break;
-                        case 6:
-                            var iconHtml = '<i class="fi fi-tr-smoke"></i>';
-                            return iconHtml;
-                            break;
-                        case 7:
-                            var iconHtml = '<i class="fi fi-tr-fog"></i>';
-                            return iconHtml;
-                            break;
-                        case 8:
-                            var iconHtml = '<i class="fi fi-tr-cloud-sun-rain"></i>';
-                            return iconHtml;
-                            break;
-                        case 9:
-                            var iconHtml = '<i class="fi fi-tr-cloud-sun-rain"></i>';
-                            return iconHtml;
-                            break;
-                        case 10:
-                            var iconHtml = '<i class="fi fi-tr-cloud-sun-rain"></i>';
-                            return iconHtml;
-                            break;
-                        case 11:
-                            var iconHtml = '<i class="fi fi-tr-thunderstorm"></i>';
-                            return iconHtml;
-                            break;
-                        case 12:
-                            var iconHtml = '<i class="fi fi-tr-cloud-sleet"></i>';
-                            return iconHtml;
-                            break;
-                        case 13:
-                            var iconHtml = '<i class="fi fi-tr-cloud-sleet"></i>';
-                            return iconHtml;
-                            break;
-                        case 14:
-                            var iconHtml = '<i class="fi fi-tr-cloud-sleet"></i>';
-                            return iconHtml;
-                            break;
-                        case 15:
-                            var iconHtml = '<i class="fi fi-tr-cloud-snow"></i>';
-                            return iconHtml;
-                            break;
-                        case 16:
-                            var iconHtml = '<i class="fi fi-tr-cloud-snow"></i>';
-                            return iconHtml;
-                            break;
-                        case 17:
-                            var iconHtml = '<i class="fi fi-tr-cloud-snow"></i>';
-                            return iconHtml;
-                            break;
-                        case 18:
-                            var iconHtml = '<i class="fi fi-tr-cloud-rain"></i>';
-                            return iconHtml;
-                            break;
-                        case 19:
-                            var iconHtml = '<i class="fi fi-tr-cloud-showers"></i>';
-                            return iconHtml;
-                            break;
-                        case 20:
-                            var iconHtml = '<i class="fi fi-tr-cloud-showers-heavy"></i>';
-                            return iconHtml;
-                            break;
-                        case 21:
-                            var iconHtml = '<i class="fi fi-tr-thunderstorm"></i>';
-                            return iconHtml;
-                            break;
-                        case 22:
-                            var iconHtml = '<i class="fi fi-tr-cloud-sleet"></i>';
-                            return iconHtml;
-                            break;
-                        case 23:
-                            var iconHtml = '<i class="fi fi-tr-cloud-sleet"></i>';
-                            return iconHtml;
-                            break;
-                        case 24:
-                            var iconHtml = '<i class="fi fi-tr-cloud-sleet"></i>';
-                            return iconHtml;
-                            break;
-                        case 25:
-                            var iconHtml = '<i class="fi fi-tr-cloud-snow"></i>';
-                            return iconHtml;
-                            break;
-                        case 26:
-                            var iconHtml = '<i class="fi fi-tr-cloud-snow"></i>';
-                            return iconHtml;
-                            break;
-                        case 27:
-                            var iconHtml = '<i class="fi fi-tr-cloud-snow"></i>';
-                            return iconHtml;
-                            break;
-                    }
-                }
-                //console.log(wsymbol());
-                
-                // Get the parent div element
-                const parentElement = document.querySelector('#weatherAndTemp');
-
-                // Get the old child element
-                const oldElement = parentElement.firstElementChild;
-
-                // Set new element
-                const newElement = document.createElement('div');
-
-                // Set content of the new element
-                newElement.innerHTML = wsymbol();
-
-                // Add the new div element as a child of the <div class"weatherIcon"> element
-                parentElement.replaceChild(newElement, oldElement);
-
-            } else if (parameterName === 't') {
-
-                // Get the air temperature
-                let airTemperature = Math.round(data.timeSeries[0].parameters[i].values[0]);
-                //console.log('parameter: ' + parameterName + ', ' + airTemperature);
-                // Display element
-                document.getElementById("temperature").textContent = airTemperature;
-
-            } else if (parameterName === 'wd') {
-
-                // Get the wind direction
-                let windDirection = Math.round(data.timeSeries[0].parameters[i].values[0]);
-                //console.log('parameter: ' + parameterName + ', ' + windDirection);
-
-            } else if (parameterName === 'ws') {
-
-                // Get the wind speed
-                let windSpeed = Math.round(data.timeSeries[0].parameters[i].values[0]);
-                //console.log('parameter: ' + parameterName + ', ' + windSpeed);
-                // Display element
-                document.getElementById("windSpeed").textContent = windSpeed;
-
-            } else if (parameterName === 'gust') {
-
-                // Get the wind speed
-                let windGustSpeed = Math.round(data.timeSeries[0].parameters[i].values[0]);
-                //console.log('parameter: ' + parameterName + ', ' + windGustSpeed);
-                // Display element
-                document.getElementById("windGust").textContent = ' (' + windGustSpeed + ') ';
-
-            } else if (parameterName === 'r') {
-
-                // Get the relative humidity
-                let relativeHumidity = Math.round(data.timeSeries[0].parameters[i].values[0]);
-                //console.log('parameter: ' + parameterName + ', ' + relativeHumidity);
-                // Display element
-                document.getElementById("humidity").textContent = relativeHumidity;
-
-            } else if (parameterName === 'pcat') {
-
-                // Get the precipitation category
-                let precipitation = Math.round(data.timeSeries[0].parameters[i].values[0]);
-                //console.log('parameter: ' + parameterName + ', ' + precipitation);
-
-            } else if (parameterName === 'pmean') {
-
-                // Get the precipitation category
-                let meanPrecipitation = Math.round(data.timeSeries[0].parameters[i].values[0]);
-                //console.log('parameter: ' + parameterName + ', ' + meanPrecipitation);
-                // Display element
-                document.getElementById("precipitation").textContent = meanPrecipitation;
-            }
-        }
-    }).catch(error => console.log(error));
-
-    const updateInterval = 10000; //10 * 60 * 1000; // 10 minutes
-    setTimeout(breakingNewsData, updateInterval);
-};*/
-
-
-//-------------------------------------------------------------------------------------------------
-
+// 

@@ -17,6 +17,8 @@ getSunlightData();
 showWeek();
 weatherData();
 timer();
+daylight();
+
 
 // Resetbutton eventlistener
 resetButton.addEventListener('click', () => {

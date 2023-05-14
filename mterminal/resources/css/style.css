@@ -146,6 +146,11 @@ iframe {
   letter-spacing: 3px;
 }
 
+#themeDay {
+  font-size: 1rem;
+  font-style: italic;
+}
+
 .version {
   padding: 0px 5px 5px 0px;;
 }
@@ -197,10 +202,12 @@ iframe {
   padding: 1rem 1rem 0rem 1rem;
   border-radius: 50%;
   background-color: #669AE1;
-  box-shadow: 0 0 1px 1px #669AE1;
+  box-shadow: 0 0 1px 3px #a9c1e3;
+  opacity: 0.6;
   text-shadow: none;
   border: none;
 }
+
 
 .resetbutton:active {
   box-shadow: none;
