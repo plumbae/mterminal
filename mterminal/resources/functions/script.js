@@ -291,19 +291,19 @@ function  weatherData() {
                             return iconHtml;
                             break;
                         case 2:
-                            var iconHtml = '<i class="fi fi-tr-cloud-sun"></i>';
+                            var iconHtml = '<i class="fi fi-rr-cloud-sun"></i>';
                             return iconHtml;
                             break;
                         case 3:
-                            var iconHtml = '<i class="fi fi-tr-clouds-sun"></i>';
+                            var iconHtml = '<i class="fi fi-rr-clouds-sun"></i>';
                             return iconHtml;
                             break;
                         case 4:
-                            var iconHtml = '<i class="fi fi-tr-clouds-sun"></i>';
+                            var iconHtml = '<i class="fi fi-rr-clouds-sun"></i>';
                             return iconHtml;
                             break;
                         case 5:
-                            var iconHtml = '<i class="fi fi-tr-clouds-sun"></i>';
+                            var iconHtml = '<i class="fi fi-rr-clouds-sun"></i>';
                             return iconHtml;
                             break;
                         case 6:
