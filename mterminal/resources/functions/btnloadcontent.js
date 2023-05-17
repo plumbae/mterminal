@@ -6,7 +6,7 @@ let btnLoad4 = document.getElementById('newbtn4');
 let btnLoad5 = document.getElementById('newbtn5');
 let btnLoad6 = document.getElementById('newbtn6');
 var w = 440; // width of object
-var h = 700; // height of object
+var h = 600; // height of object
 
 function home() {
   console.log('Home');
