@@ -6,7 +6,7 @@ let btnLoad4 = document.getElementById('newbtn4');
 let btnLoad5 = document.getElementById('newbtn5');
 let btnLoad6 = document.getElementById('newbtn6');
 var w = 440; // width of iframe
-var h = 350; // height of iframe
+var h = 700; // height of iframe
 
 function home() {
   console.log('Home');
