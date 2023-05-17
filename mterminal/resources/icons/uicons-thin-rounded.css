@@ -1,8 +1,8 @@
 @font-face {
 font-family: "uicons-thin-rounded";
 src: url("../webfonts/uicons-thin-rounded.eot#iefix") format("embedded-opentype"),
-url("../webfonts/uicons-thin-rounded.woff2") format("woff2"),
-url("../webfonts/uicons-thin-rounded.woff") format("woff");
+url("./webfonts/uicons-thin-rounded.woff2") format("woff2"),
+url("./webfonts/uicons-thin-rounded.woff") format("woff");
 }
 
     i[class^="fi-tr-"]:before, i[class*=" fi-tr-"]:before, span[class^="fi-tr-"]:before, span[class*="fi-tr-"]:before {
